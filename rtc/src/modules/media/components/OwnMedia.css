@@ -1,0 +1,15 @@
+.videoContent {
+    margin: auto;
+    padding: 20px 70px 20px 70px;
+    width: 80%;
+    height: auto;
+}
+
+video {
+    background: #222;
+    margin: 0;
+    --width: 100%;
+    width: var(--width);
+    height: calc(var(--width) * 0.75);
+}
+  
