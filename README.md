@@ -9,3 +9,4 @@ I implemented WebRTC-samples from [Official Samples](https://webrtc.github.io/sa
     ```shell
         npm start
     ```
+    You should add your ip with port in [Chrome Setting](chrome://flags/#unsafely-treat-insecure-origin-as-secure "Insecure Ip Setting") if you use insecure origin(http).
