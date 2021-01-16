@@ -1,6 +1,6 @@
 # WebRTC-samples
 
-I implemented WebRTC-samples from [Official Samples](https://webrtc.github.io/samples/, "Official WebRTC sample Link") using ReactJS
+I implemented WebRTC-samples from [Official Samples](https://webrtc.github.io/samples, "Official WebRTC sample Link") using ReactJS
 
 ## Directory
 - rtc
