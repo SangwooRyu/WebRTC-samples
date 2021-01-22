@@ -6,6 +6,8 @@ import { Cascader, Button } from 'antd';
 function OwnMedia() {
   const userVideo = useRef();
   const remoteVideo = useRef();
+  
+  const [isCalling, setCalling] = useState(false);
 
   const [audioSources, setAudioSources] = useState([]);
   const [audioOutputs, setAudioOutputs] = useState([]);
@@ -182,6 +184,7 @@ function OwnMedia() {
       console.log('pc1 createOffer start');
       const offer = await pc1.createOffer(offerOptions);
       await onCreateOfferSuccess(offer);
+      setCalling(true);
     } catch (e) {
       onCreateSessionDescriptionError(e);
     }
@@ -193,6 +196,7 @@ function OwnMedia() {
     pc2.close();
     pc1 = null;
     pc2 = null;
+    setCalling(false);
   }
 
   function onCreateSessionDescriptionError(error) {
@@ -304,8 +308,8 @@ function OwnMedia() {
         {RemoteVideo}
       </div>
       <div className="button-container">
-        <Button className="control-button" type="primary" onClick={call}> Call </Button>
-        <Button className="control-button" type="primary" onClick={hangup}> Hang Up </Button>
+        <Button className="control-button" type="primary" onClick={call} disabled={isCalling? true : false}> Call </Button>
+        <Button className="control-button" type="primary" onClick={hangup} disabled={isCalling? false : true}> Hang Up </Button>
       </div>
       <div>
         <div>
